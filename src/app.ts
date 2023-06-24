@@ -2,7 +2,7 @@ import express, { RequestHandler } from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-
+import "./utils/dbConfig";
 import BlogRoute from "./routes/BlogRoute";
 
 class App {

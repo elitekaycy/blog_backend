@@ -1,9 +1,11 @@
 // Post Model
 
-/* 
-id
-title=title of the post
-content=content of the post
-created_at= created post at
-updated_at=updated post at
-*/
+export const createPostTableQuery = `
+CREATE TABLE IF NOT EXISTS blog_posts (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+  )
+`;
