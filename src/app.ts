@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import "./utils/dbConfig";
 import BlogRoute from "./routes/BlogRoute";
+import BlogHtml from "./routes/BlogHtml";
 import cors from "cors";
 
 class App {
@@ -21,10 +22,11 @@ class App {
     this.app.use(express.urlencoded({ extended: false }));
     this.app.use(cookieParser());
     this.app.use(cors());
-    // this.app.use(express.static(path.join(__dirname, "public")));
+    this.app.use(express.static(path.join(__dirname, "public")));
   }
 
   private routerSetup() {
+    this.app.use("/", BlogHtml);
     this.app.use("/blog", BlogRoute);
   }
 }

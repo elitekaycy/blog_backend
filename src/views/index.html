@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0E121A;
+        font-family: 'League Spartan', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .container {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 40px;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: -0.5px;
+        padding: 5px;
+        border-bottom: 0.5px solid white;
+        margin-bottom: 20px;
+    }
+
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .blog-container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .api-title {
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: monospace;
+    }
+
+    .api-text {
+        padding: 6px;
+        color: green;
+        border-radius: 8px;
+        background-color: #1D2331;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .api-content {
+        background-color: #1D2331;
+        padding: 15px;
+        border-radius: 15px;
+        min-height: 80px;
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        gap: 10px;
+    }
+
+    .api-sub {
+        font-size: 13px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .summary {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .code {
+        color: orange
+    }
+
+    .api-span {
+        font-weight: 700;
+        color: green
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="title">
+            Blog Summary
+        </div>
+
+        <div class="blog-container">
+
+            <div class="summary">
+                <div class="api-title">
+                    <span class="api-text">POST</span> http://localhost:3000/blog/create
+                </div>
+
+                <div class="api-content">
+                    <div class="api-sub"><span class="api-span">Description:</span> this route creates a new post with
+                        the following details - title, content, created_at, updated_at</div>
+                    <div class="api-sub"><span class="api-span">Path:</span> /blog/post/create</div>
+                    <div class="api-sub"><span class="api-span">body:</span> { title, content }</div>
+                    <div>
+                        <code class="code">
+                            {
+                            <br />
+                            &nbsp;&nbsp;"post": {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 6,<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "this is the 6th post",<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content": "this is my test and 6th post blog", </br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2023-06-24T19:58:24.164Z", <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updated_at": "2023-06-24T19:58:24.164Z" <br />
+                            &nbsp;}<br />
+
+                            }
+                        </code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--get all posts-->
+            <div class="summary">
+                <div class="api-title">
+                    <span class="api-text">GET</span> http://localhost:3000/blog/posts
+                </div>
+
+                <div class="api-content">
+                    <div class="api-sub"><span class="api-span">Description:</span> this route gets all the post in the
+                        database and returns them in json format</div>
+                    <div class="api-sub"><span class="api-span">Path:</span> /blog/posts</div>
+                    <div>
+                        <code class="code">
+                            {<br>
+                            &nbsp;"posts": <br>&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "id": 1,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "my first blog",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content": "this is my test and first blog",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2023-06-24T19:58:24.164Z",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updated_at": "2023-06-24T19:58:24.164Z"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;]<br>
+                            }
+                        </code>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--get one post-->
+            <div class="summary">
+                <div class="api-title">
+                    <span class="api-text">GET</span> http://localhost:3000/blog/posts/1
+                </div>
+
+                <div class="api-content">
+                    <div class="api-sub"><span class="api-span">Description:</span> this route takes an id as a
+                        parameter and returns the post that the id belongs to</div>
+                    <div class="api-sub"><span class="api-span">Path:</span> /blog/posts/:id</div>
+                    <div class="api-sub"><span class="api-span">Parameter: </span> id </div>
+                    <div>
+                        <code class="code">
+                            &nbsp;{<br>
+                            &nbsp;"post": {<br>
+                            &nbsp;&nbsp;"id": 3,<br>
+                            &nbsp;&nbsp;&nbsp;"title": "my first blog",<br>
+                            &nbsp;&nbsp;&nbsp;"content": "this is my test and first blog",<br>
+                            &nbsp;&nbsp;&nbsp;"created_at": "2023-06-24T19:58:24.164Z",<br>
+                            &nbsp;&nbsp;&nbsp;"updated_at": "2023-06-24T19:58:24.164Z"<br>
+                            &nbsp;&nbsp;&nbsp;}<br>
+                            }
+                        </code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--edit one post-->
+            <div class="summary">
+                <div class="api-title">
+                    <span class="api-text" style="color: #fdd335;">PUT</span> http://localhost:3000/blog/post/edit/1
+                </div>
+
+                <div class="api-content">
+                    <div class="api-sub"><span class="api-span">Description:</span> this route edits the post with the
+                        specific id passed in</div>
+                    <div class="api-sub"><span class="api-span">Path:</span> /blog/post/edit/:id</div>
+                    <div class="api-sub"><span class="api-span">Parameter:</span> id</div>
+                    <div class="api-sub"><span class="api-span">body: </span> { title, content } </div>
+                    <div>
+                        <code class="code">
+                            &nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;"updatedPost": {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "edited first blog",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content": "this is my test and first blog -edited",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2023-06-24T19:58:24.164Z",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updated_at": "2023-06-24T19:58:24.164Z"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;}`
+                        </code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--edit one post-->
+            <div class="summary">
+                <div class="api-title">
+                    <span style="color: #ff033e;" class="api-text">DELETE</span> http://localhost:3000/blog/posts/1
+                </div>
+
+                <div class="api-content">
+                    <div class="api-sub"><span class="api-span">Description:</span> this route deletes the post with the
+                        specific id passed in</div>
+                    <div class="api-sub"><span class="api-span">Path:</span> /blog/posts/:id</div>
+                    <div class="api-sub"><span class="api-span">Parameter:</span> id</div>
+                    <div class="api-sub"><span class="api-span">Status: </span> 204 </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
