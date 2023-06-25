@@ -1,3 +1,5 @@
+Description of the api route functionalities hosted here - [blog-summary](https://blog-summary.tiiny.site/)
+
 ### how to run
 
 - fork and clone repo
