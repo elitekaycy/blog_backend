@@ -8,10 +8,10 @@ import { Router } from "express";
 const router = Router();
 
 /* create blog post*/
-router.post("/create", BlogCreateController);
-router.put("/edit/:blogId", BlogEditController);
-router.get("/blogs/:blogId", BlogGetOneController);
-router.get("/blogs", BlogGetAllController);
-router.delete("/blogs/:blogId", BlogDeleteController);
+router.post("/post/create", BlogCreateController);
+router.put("/post/edit/:id", BlogEditController);
+router.get("/posts/:id", BlogGetOneController);
+router.get("/posts", BlogGetAllController);
+router.delete("/posts/:id", BlogDeleteController);
 
 export default router;

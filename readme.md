@@ -10,10 +10,10 @@
 <details>
 <summary> 
 <font color="green">GET</font>
-Get all posts in the blog - [blogs](https://localhost:3000/blogs)</summary>
+Get all posts in the blog</summary>
      
     description: this route gets all the post in the database and returns them in json format
-    Path: /blogs
+    Path: /blog/posts
 
     `{
         "posts": [
@@ -32,10 +32,10 @@ Get all posts in the blog - [blogs](https://localhost:3000/blogs)</summary>
 <details>
 <summary>
 <font color="green">POST</font>
-add a post to the blog [blogs](https://localhost:3000/create)</summary>
+add a post to the blog </summary>
     
     description: this route creates a new post with the following details - title, content, created_at, updated_at
-    Path: /create
+    Path: /blog/post/create
     
     `{
         "post":  {
@@ -52,10 +52,10 @@ add a post to the blog [blogs](https://localhost:3000/create)</summary>
 <details>
 <summary>
 <font color="green">GET</font>
-get an individual post from blog [blogs](https://localhost:3000/blogs/3)</summary>
+get an individual post from blog</summary>
     
     description: this route takes an id as a parameter and returns the post that the id belongs to
-    Path: /blogs/:blogId
+    Path: /blog/post/:id
     
     `{
         "post": {
@@ -71,10 +71,10 @@ get an individual post from blog [blogs](https://localhost:3000/blogs/3)</summar
 <details>
 <summary>
 <font color="yellow">PUT</font>
-edit an individual post in the blog [blogs](https://localhost:3000/edit/1)</summary>
+edit an individual post in the blog</summary>
     
     description: this route edits the post with the specific id passed in
-    Path: /edit/:blogId
+    Path: /blog/post/edit/:id
     
     `{
         "updatedPost": {
@@ -90,10 +90,10 @@ edit an individual post in the blog [blogs](https://localhost:3000/edit/1)</summ
 <details>
 <summary>
 <font color="red">DELETE</font>
-delete an individual post from the blog [blogs](https://localhost:3000/blogs/1)</summary>
+delete an individual post from the blog</summary>
     
     description: this route deltes the post with the specific id passed in
-    Path: /blogs/:blogId
+    Path: /blog/posts/:id
     status: 204
     
 </details>

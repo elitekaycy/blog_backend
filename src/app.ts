@@ -23,7 +23,7 @@ class App {
   }
 
   private routerSetup() {
-    this.app.use("/", BlogRoute);
+    this.app.use("/blog", BlogRoute);
   }
 }
 

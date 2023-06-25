@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 
 const BlogEditController = async (req: Request, res: Response) => {
   try {
-    const id: string = req.params.blogId;
+    const id: string = req.params.id;
     const blogPost: BlogPostType = req.body;
     const updated_at: Date = new Date();
 

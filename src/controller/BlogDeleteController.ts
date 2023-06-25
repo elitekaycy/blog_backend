@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 const BlogDeleteController = async (req: Request, res: Response) => {
   try {
-    const id: string = req.params.blogId;
+    const id: string = req.params.id;
     const client = await pool.connect();
     const query = `DELETE from blog_posts where id=$1`;
     const values = [id];
