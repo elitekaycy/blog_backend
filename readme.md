@@ -36,6 +36,7 @@ add a post to the blog </summary>
     
     description: this route creates a new post with the following details - title, content, created_at, updated_at
     Path: /blog/post/create
+    body: { title, content }
     
     `{
         "post":  {
@@ -75,6 +76,7 @@ edit an individual post in the blog</summary>
     
     description: this route edits the post with the specific id passed in
     Path: /blog/post/edit/:id
+    body: { title, content }
     
     `{
         "updatedPost": {
