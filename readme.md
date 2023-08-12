@@ -1,8 +1,10 @@
+Description of the api route functionalities hosted here - [blog-summary](https://blog-summary.tiiny.site/)
+
 ### how to run
 
 - fork and clone repo
 - inside the project dir run npm install
-- provide details for the database(postgress) in an env following the sample.env format (link to the sample.env - )
+- provide details for the database(postgress) in an env following the sample.env format
 - run npm run start on windows / npm run start_mac on mac/linux
 
 ### Routes
