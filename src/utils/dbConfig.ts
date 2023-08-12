@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { createPostTableQuery } from "../model/Post";
+import { createPostTableQuery } from "../blog/model/Post";
 import { error } from "console";
 
 import { config } from "dotenv";

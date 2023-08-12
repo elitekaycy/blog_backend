@@ -3,8 +3,8 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import "./utils/dbConfig";
-import BlogRoute from "./routes/BlogRoute";
-import BlogHtml from "./routes/BlogHtml";
+import BlogRoute from "./blog/blog.route";
+import BlogHtml from "./docs/BlogHtml";
 import cors from "cors";
 
 class App {
